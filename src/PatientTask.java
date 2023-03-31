@@ -1,14 +1,14 @@
 public class PatientTask {
-
     private static int number;
-    private static int  i;
+    private static int i;
+
     //Patients task a
-    public static Patients[]  patientsWithThisDiagnosis(Patients[] patientsList,String diagnosis){
-        Patients[] newPatientsList=new Patients[patientsList.length];
-        number=1;
-        i=0;
-        for (Patients patients:patientsList) {
-            if(patients.getDiagnosis().equals(diagnosis)) {
+    public static Patients[] patientsWithThisDiagnosis(Patients[] patientsList, String diagnosis) {
+        Patients[] newPatientsList = new Patients[patientsList.length];
+        number = 1;
+        i = 0;
+        for (Patients patients : patientsList) {
+            if (patients.getDiagnosis().equals(diagnosis)) {
                 newPatientsList[i] = patients;
                 i++;
             }
@@ -16,8 +16,9 @@ public class PatientTask {
         informationOutput(newPatientsList);
         return newPatientsList;
     }
+
     //Patients task b
-    public static Patients[] medicalCardNumber(Patients[] patientsList,int medCardNumber1,int medCardNumber2) {
+    public static Patients[] medicalCardNumber(Patients[] patientsList, int medCardNumber1, int medCardNumber2) {
         number = 1;
         i = 0;
         Patients[] newPatientsList = new Patients[patientsList.length];
@@ -44,7 +45,7 @@ public class PatientTask {
 
     //Вывод информации
 
-    public static Patients[] informationOutput(Patients[] newPatientsList){
+    public static Patients[] informationOutput(Patients[] newPatientsList) {
         for (i = 0; i < newPatientsList.length; i++) {
             if (newPatientsList[i] != null) {
                 System.out.println(number + ") " + newPatientsList[i].information());

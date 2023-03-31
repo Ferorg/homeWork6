@@ -1,4 +1,5 @@
 public class Patients {
+
     private int id;
     private String surName;
     private String name;
@@ -7,7 +8,8 @@ public class Patients {
     private int phoneNumber;
     private int medicalCardNumber;
     private String diagnosis;
-    public  Patients(int id,String surName,String name,String secondeName,String address, int phoneNumber,int medicalCardNumber,String diagnosis) {
+
+    public Patients(int id, String surName, String name, String secondeName, String address, int phoneNumber, int medicalCardNumber, String diagnosis) {
         this.id = id;
         this.surName = surName;
         this.name = name;
@@ -17,13 +19,16 @@ public class Patients {
         this.medicalCardNumber = medicalCardNumber;
         this.diagnosis = diagnosis;
     }
-    public int getId(){
+
+    public int getId() {
         return id;
     }
-    public void setId(int id){
-        this.id=id;
+
+    public void setId(int id) {
+        this.id = id;
     }
-    public String getSurName(){
+
+    public String getSurName() {
         return surName;
     }
 
@@ -79,8 +84,9 @@ public class Patients {
     public void setDiagnosis(String diagnosis) {
         this.diagnosis = diagnosis;
     }
-    public String information(){
-        return "id: "+id+", Фамилия: "+surName+", Имя: "+name+", Отчество: "+secondeName+", адресс: "+address+
-                ", ном.телефона: "+phoneNumber+", номер мед. карты: "+medicalCardNumber+", Диагноз: "+diagnosis;
+
+    public String information() {
+        return "id: " + id + ", Фамилия: " + surName + ", Имя: " + name + ", Отчество: " + secondeName + ", адресс: " + address +
+                ", ном.телефона: " + phoneNumber + ", номер мед. карты: " + medicalCardNumber + ", Диагноз: " + diagnosis;
     }
 }
