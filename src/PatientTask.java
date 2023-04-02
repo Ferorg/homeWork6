@@ -24,22 +24,32 @@ public class PatientTask {
         Patients[] newPatientsList = new Patients[patientsList.length];
         if (medCardNumber1 < medCardNumber2) {
             {
-                for (Patients patients : patientsList)
-                    if ((patients.getMedicalCardNumber() >= medCardNumber1) && (patients.getMedicalCardNumber() <= medCardNumber2)) {
-                        newPatientsList[i] = patients;
-                        i++;
-                    }
+                ifFirstMedicalcardLow(patientsList,newPatientsList, medCardNumber1,medCardNumber2, i);
+
             }
         } else {
-            for (Patients patients : patientsList) {
-                if ((patients.getMedicalCardNumber() >= medCardNumber2) && (patients.getMedicalCardNumber() <= medCardNumber1)) {
-                    newPatientsList[i] = patients;
-                    i++;
-                }
-            }
+            ifSecondeMedicalcardLow(patientsList,newPatientsList,medCardNumber1, medCardNumber2,i);
 
         }
         informationOutput(newPatientsList);
+        return newPatientsList;
+    }
+    private static Patients[] ifFirstMedicalcardLow(Patients[] patientsList,Patients[] newPatientsList,int medCardNumber1,int medCardNumber2,int i){
+        for (Patients patients : patientsList){
+            if ((patients.getMedicalCardNumber() >= medCardNumber1) && (patients.getMedicalCardNumber() <= medCardNumber2)) {
+                newPatientsList[i] = patients;
+                i++;
+            }
+        }
+        return newPatientsList;
+    }
+    private static Patients[] ifSecondeMedicalcardLow(Patients[] patientsList,Patients[] newPatientsList,int medCardNumber1,int medCardNumber2,int i){
+        for (Patients patients : patientsList) {
+            if ((patients.getMedicalCardNumber() >= medCardNumber2) && (patients.getMedicalCardNumber() <= medCardNumber1)) {
+                newPatientsList[i] = patients;
+                i++;
+            }
+        }
         return newPatientsList;
     }
 

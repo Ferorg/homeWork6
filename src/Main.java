@@ -23,7 +23,7 @@ public class Main {
                 case (2):
                     System.out.println("Задание 1.1: список пациентов, номер медицинской карты которых находится в " +
                             "заданном интервале.");
-                    PatientTask.medicalCardNumber(patients, 150, 450);
+                    PatientTask.medicalCardNumber(patients, 250, 450);
                     inProgram = true;
                     break;
                 case (3):

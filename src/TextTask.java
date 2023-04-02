@@ -36,15 +36,7 @@ public class TextTask {
                     tempWrods = wordsMass[i].substring(wordsMass[i].length() - substring.length());
                     flagPunctuationMark = false;
                 }
-                if (tempWrods.equals(substring)) {
-                    if (flagPunctuationMark) {
-                        StringBuilder obj = new StringBuilder(wordsMass[i]);
-                        wordsMass[i] = String.valueOf(obj.insert(s, words));
-                    } else {
-                        StringBuilder obj = new StringBuilder(wordsMass[i]);
-                        wordsMass[i] = wordsMass[i] + words;
-                    }
-                }
+                punctuationCheck(tempWrods,wordsMass,i,s,words,substring,flagPunctuationMark);
             }
         }
         String newText = String.join(" ", wordsMass);
@@ -63,4 +55,17 @@ public class TextTask {
         System.out.println(newText);
         return newText;
     }
+    private static String[] punctuationCheck(String tempWords,String[] wordsMass,int i,int s,String words,String substring,boolean flagPunctuationMark){
+        if (tempWords.equals(substring)) {
+            if (flagPunctuationMark) {
+                StringBuilder obj = new StringBuilder(wordsMass[i]);
+                wordsMass[i] = String.valueOf(obj.insert(s, words));
+            } else {
+                StringBuilder obj = new StringBuilder(wordsMass[i]);
+                wordsMass[i] = wordsMass[i] + words;
+            }
+        }
+        return new String[]{wordsMass[i]};
+    }
+
 }
